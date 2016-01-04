@@ -93,3 +93,118 @@ try:
 
 except:
 	print('error: please enter a number\n')
+
+
+	#fixed this exercise: not sure how
+	try:
+	score = float(raw_input('Please enter a score between 0.0 and 1.0\n'))
+
+	if score > 1.0 or score < 0.0:
+		score = raw_input('Incorrect range.please enter score between 0.0 and 1.0\n')
+
+	
+	if score >= 0.9:
+		print('A')
+	elif score >= 0.8:
+		print('B')
+	elif score >= 0.7:
+		print('C')
+	elif score >= 0.6:
+		print('D')
+	else:
+		print('F')
+
+except:
+	print('error: please enter a number\n')
+
+	#chapter 4 example 
+	import random
+
+for i in range(10):
+	x = random.random()
+	print x
+
+	
+
+# dealing with random numbers example
+import random
+
+
+for i in range(10):
+	x = random.random()
+	print x
+
+print(random.randint(5,10))
+
+
+t = [1,2,3]
+print(random.choice(t))
+
+#math example
+import math
+
+degrees = 45
+radians = degrees/360.0 * 2 * math.pi
+print(math.sin(radians))
+
+#function example
+
+def repeat_lyrics():
+	print_lyrics()
+	print_lyrics()
+
+
+def print_lyrics():
+	print "I'm a lumberjack"
+	print "i sleep all night"
+
+
+repeat_lyrics()
+
+#Exercise 4.6
+def computepay(hoursVar, rateVar):
+	if hoursVar < 40:
+		pay = hoursVar * rateVar
+	elif hours > 40:
+		extraHours = hoursVar-40
+		pay = 40*rateVar + extraHours*(rateVar*1.5)
+
+	return pay
+
+try:
+	hours = float(raw_input('Enter hours\n'))
+	rate = float(raw_input('Enter Rate\n'))
+
+except:
+	print('error, enter numeric input')
+
+pay = computepay(hours, rate)
+
+print(pay)
+
+#Exercise 4.7
+def computeGrade(scoreVar):
+
+	if scoreVar >= 0.9:
+		print('A')
+	elif scoreVar >= 0.8:
+		print('B')
+	elif scoreVar >= 0.7:
+		print('C')
+	elif scoreVar >= 0.6:
+		print('D')
+	else:
+		print('F')
+
+try:
+	score = float(raw_input('Please enter a score between 0.0 and 1.0\n'))
+
+	if score > 1.0 or score < 0.0:
+		score = raw_input('Incorrect range. please enter score between 0.0 and 1.0\n')
+
+except:
+	print('error: please enter a number\n')
+
+score = computeGrade(score)
+print(score)
+
