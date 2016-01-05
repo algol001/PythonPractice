@@ -1,25 +1,33 @@
-def computeGrade(scoreVar):
 
-	if scoreVar >= 0.9:
-		print('A')
-	elif scoreVar >= 0.8:
-		print('B')
-	elif scoreVar >= 0.7:
-		print('C')
-	elif scoreVar >= 0.6:
-		print('D')
+count = 0
+total = 0
+largest = None
+smallest = None
+import re
+
+
+while True:
+	enteredValue = raw_input("enter a number\n")
+
+	if re.search('done',enteredValue, re.IGNORECASE):
+		break
 	else:
-		print('F')
+		try: 
+			enteredValueFloat = float(enteredValue)
+			#total += enteredValueFloat
 
-try:
-	score = float(raw_input('Please enter a score between 0.0 and 1.0\n'))
+			if smallest is None or smallest < enteredValueFloat:
+				smallest = enteredValueFloat
 
-	if score > 1.0 or score < 0.0:
-		score = raw_input('Incorrect range. please enter score between 0.0 and 1.0\n')
+			if largest is None or largest > enteredValueFloat:
+				largest = enteredValueFloat
 
-except:
-	print('error: please enter a number\n')
+			count += 1
 
-score = computeGrade(score)
-print(score)
+		except ValueError as e: #this catches value errors  - to catch multiple types of errors can layer one after another
+			print('Error:')
+			print e
 
+print 'count: ', count
+print 'smallest: ', smallest
+print 'largest: ', largest
