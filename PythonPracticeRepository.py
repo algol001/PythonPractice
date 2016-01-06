@@ -375,3 +375,93 @@ print 'count: ', count
 print 'smallest: ', smallest
 print 'largest: ', largest
 
+#exercise 6.1 
+
+array = 'Belina'
+index = len(array)-1
+
+while index>=0:
+	letter = array[index]
+	print letter
+	index -= 1
+
+#example 6.6
+word  = 'banana'
+count = 0
+
+for letter in word:
+	if letter == 'a':
+		count += 1
+print count
+
+#kind of cool that it loops through each letter automatically as a list
+# 'in' boolean operator looks at substring in string
+
+#more practice chapter 6
+word = 'monty python'
+newWord = word.upper()
+print newWord
+
+'''
+str.count(sub[, start[, end]])
+Return the number of non-overlapping occurrences of 
+substring sub in the range [start, end]. Optional arguments 
+start and end are interpreted as in slice notation.
+'''
+word.count('y'[,2 [,10])
+
+#practice from terminal
+
+>>> print s[0:5]
+monty
+>>> s[3:3]
+''
+>>> s[-5:-4]
+'y'
+>>> s[-5:-1]
+'ytho'
+>>> s[:]
+'monty python'
+>>> index = s.find('y')
+>>> print index
+4
+>>> s.find("ont")
+1
+>>> s.find("y",6)
+7
+>>> line = 
+  File "<stdin>", line 1
+    line = 
+          ^
+>>> line.strip()
+'hello   wor l   d'
+>>> line = '   hello world   '
+>>> line.strip()
+'hello world'
+>>> 
+>>> line = 'Hello world'
+>>> line.lower().startswith('h')
+True
+>>> line.strip()
+'Hello world'
+
+>>> s.count('y',6,10)
+1
+
+>>> email ='alina.goldman@gmail.com'
+>>> atpos = email.find('@')
+>>> print atpos
+13
+>>> hostname = email[atpos+1:]
+
+>>> print hostname
+gmail.com
+>>> camels = 42
+>>> 'i have spotted %d camels.' %camels
+'i have spotted 42 camels.'
+
+#Exercise 6.14
+str = 'X-DSPAM-Confidence: .08475'
+colPos=str.find(':')
+num = float(str[colPos+1:])
+print num
